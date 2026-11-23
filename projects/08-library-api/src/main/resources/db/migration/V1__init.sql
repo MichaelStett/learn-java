@@ -1,0 +1,3 @@
+-- Pierwsza migracja Flyway (odpowiednik EF Core migration).
+-- Tu utwórz tabele: users, books, loans ...
+SELECT 1;

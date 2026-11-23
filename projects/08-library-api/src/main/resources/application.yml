@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: library-api
+  # Datasource w profilu dev ustawia spring-boot-docker-compose na podstawie compose.yaml,
+  # a w testach Testcontainers (@ServiceConnection). Dla prod: application-prod.yml + zmienne środowiskowe.
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate   # schemat zarządzany wyłącznie przez Flyway
+  # compose.yaml jest szukany w katalogu roboczym. `gradlew bootRun` uruchamia się w katalogu modułu.
+  # W IntelliJ ustaw "Working directory" konfiguracji uruchomienia na $MODULE_WORKING_DIR$.
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+logging:
+  level:
+    dev.learnjava: DEBUG
